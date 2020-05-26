@@ -3,7 +3,8 @@
   "version": "4.0.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "latest",
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/icons": "^4.9.1",
     "clsx": "latest",
     "material-ui-icons": "^1.0.0-beta.36",
     "next": "latest",
@@ -12,9 +13,9 @@
     "react-dom": "latest"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+    "start": "NODE_ENV=production node server.js",
+    "export": "npm run build && next export"
   }
 }

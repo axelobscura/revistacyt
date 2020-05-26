@@ -21,6 +21,8 @@ export default function MyApp(props) {
       <Head>
         <title>Revista Construcción y Tecnología en Concreto - Instituto Mexicano del Cemento y del Concreto A.C.</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <link rel="icon" type="image/png" href="http://www.imcyc.com/revistacyt/templates/resvista_cyt/favicon.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=Quicksand:wght@300;700&display=swap" rel="stylesheet"></link>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

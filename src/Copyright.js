@@ -6,7 +6,7 @@ import MuiLink from '@material-ui/core/Link';
 const styles = theme => ({
   elfooter: {
     width: '100%',
-    padding: '20px',
+    padding: '10px',
     margin: '0',
     position: 'fixed',
     bottom: '0',
@@ -21,11 +21,10 @@ const Copyright = (props) => {
   const { classes } = props;
   return (
     <Typography variant="body2" color="textSecondary" align="center" className={classes.elfooter}>
-      {`© ${new Date().getFullYear()}. Revista Construcción y Tecnología en Concreto.`}
+      {`© ${new Date().getFullYear()}. Revista Construcción y Tecnología en Concreto.`}<br />
       <MuiLink color="inherit" href="https://material-ui.com/">
         www.imcyc.com
-      </MuiLink>{' '}
-      {'.'}
+      </MuiLink>
     </Typography>
   );
 };
