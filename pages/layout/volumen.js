@@ -34,6 +34,11 @@ const styles = theme => ({
     }
 });
 
+var month_name = function (dt) {
+    var mlist = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    return mlist[dt.getMonth()];
+};
+
 const Volumen = (props) => {
     const { classes } = props;
     return (
@@ -47,7 +52,7 @@ const Volumen = (props) => {
                         <Paper className={classes.paper}><CollectionsBookmarkIcon className={classes.icon} /> NÚMERO 12</Paper>
                     </Grid>
                     <Grid item xs={4}>
-                        <Paper className={classes.paper}><CollectionsBookmarkIcon className={classes.icon} /> {`${props.month_name(new Date())} ${new Date().getFullYear()}`}</Paper>
+                        <Paper className={classes.paper}><CollectionsBookmarkIcon className={classes.icon} /> {`${month_name(new Date())} ${new Date().getFullYear()}`}</Paper>
                     </Grid>
                 </Grid>
             </Container>
