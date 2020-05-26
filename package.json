@@ -13,9 +13,9 @@
     "react-dom": "latest"
   },
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
-    "start": "NODE_ENV=production node server.js",
-    "export": "npm run build && next export"
+    "dev": "next",
+    "start": "next start",
+    "export": "npm run build && npm run export",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   }
 }
