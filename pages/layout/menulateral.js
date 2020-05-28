@@ -1,17 +1,22 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/styles';
 import Volumen from './volumen';
 import ScheduleIcon from '@material-ui/icons/Schedule';
+import Secciones from './secciones';
 
 const styles = theme => ({
     elMenuLateral: {
         position: 'fixed',
         left: 0,
         top: 0,
-        backgroundColor: 'rgba(0,0,0,0.8)',
-        boxShadow: '0 0 10px #000'
+        width: '100%',
+        right: 0,
+        padding: '0',
+        margin: 0,
+        minWidth: '100%'
     },
     imagenLogo: {
         maxWidth: '100%',
@@ -40,6 +45,11 @@ const styles = theme => ({
         marginRight: '5px',
         position: 'relative',
         float: 'left'
+    },
+    opacidad: {
+        background: 'rgba(0,0,0,0.8)',
+        margin: '0',
+        padding: '20px'
     }
 });
 
@@ -52,13 +62,20 @@ const Menulateral = (props) => {
     const { classes } = props;
     return (
         <React.Fragment>
-            <Container maxWidth="xs" className={classes.elMenuLateral}>
-                <h2 className={classes.fecha}><ScheduleIcon className={classes.icon} /> {`${new Date().getDate()} - ${month_name(new Date())} - ${new Date().getFullYear()}`}</h2>
-                <div className={classes.imagenLogo}>
-                    <img src="/logo.png" className={classes.imagenLogoIp} alt="my image" />
-                </div>
-                <Volumen month_name={month_name} />
-                <Typography component="div" />
+            <Container className={classes.elMenuLateral}>
+                <Grid container spacing={3}>
+                    <Grid item xs={4} className={classes.opacidad}>
+                        <h2 className={classes.fecha}><ScheduleIcon className={classes.icon} /> {`${new Date().getDate()} - ${month_name(new Date())} - ${new Date().getFullYear()}`}</h2>
+                        <div className={classes.imagenLogo}>
+                            <img src="/logo.png" className={classes.imagenLogoIp} alt="my image" />
+                        </div>
+                        <Volumen month_name={month_name} />
+                        <Typography component="div" />
+                    </Grid>
+                    <Grid item xs={8} m={0} p={0} style={{ margin: '0', padding: '0' }}>
+                        <Secciones />
+                    </Grid>
+                </Grid>
             </Container>
         </React.Fragment>
     )
